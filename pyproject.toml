@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "itunes-export"
+version = "0.1.0"
+description = "Export Apple Music / iTunes playlists to CSV, XML, or JSON — no manual steps"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = ["pywin32; sys_platform == 'win32'"]
+keywords = [
+    "apple-music", "itunes", "playlist", "export", "csv", "music", "windows"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+[project.scripts]
+itunes-export = "itunes_export.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Gnomecromancer/itunes-export"
+Repository = "https://github.com/Gnomecromancer/itunes-export"
+Issues = "https://github.com/Gnomecromancer/itunes-export/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
